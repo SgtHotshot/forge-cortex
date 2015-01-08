@@ -5,9 +5,13 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<title>{% block title %}{% endblock %}</title>
+		<title>{% block title %}Forge Cortex{% endblock %}</title>
 
-		{% block styles %}{% endblock %}
+		{% load staticfiles %}
+
+		<link rel="stylesheet" type="text/css" href="{% static 'css/layout.css' %}" />
+		{% block styles %}
+		{% endblock %}
 
 		<!--[if lt IE 9]>
 		<script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -15,7 +19,38 @@
 		<![endif] -->
 	</head>
 	<body>
-		{% block page %}{% endblock %}
+		<header>
+			<nav>
+				<ul>
+					{% block nav_links %}
+					<li>
+						<a href="#todo">Cortex</a>
+					</li>
+					{% endblock %}
+				</ul>
+				<div class="user-container">
+					{% if user.is_authenticated %}
+					TODO
+					{% else %}
+					<a href="#login">Login</a><!-- TODO -->
+					{% endif %}
+				</div>
+			</nav>
+		</header>
+		<main>
+			{% block page %}
+			{% endblock %}
+		</main>
+		<footer>
+			<ul>
+				<li>
+					<a href="https://github.com/sgthotshot/forge-cortex">Source</a>
+				</li>
+				<li>
+					<a href="#about">About</a><!-- TODO -->
+				</li>
+			</ul>
+		</footer>
 
 		{% block scripts %}{% endblock %}
 	</body>

@@ -1,0 +1,72 @@
+html, body
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+}
+
+body
+{
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+header
+{
+	border-bottom: 1px solid black;
+}
+
+header nav
+{
+	display: flex;
+	flex-direction: row;
+}
+
+header nav ul
+{
+	display: flex;
+	flex: 1;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+header nav ul li a
+{
+	display: block;
+	padding: 4px;
+}
+
+header nav .user-container a
+{
+	display: block;
+	padding: 4px;
+}
+
+main
+{
+	flex: 1;
+}
+
+footer
+{
+	border-top: 1px solid black;
+}
+
+footer ul
+{
+	display: flex;
+	justify-content: center;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+footer ul li a
+{
+	display: block;
+	padding: 4px;
+}
+
