@@ -9,21 +9,22 @@
 
 {% block body %}
 	<header>
-		<nav>
-			<ul>
-				{% block nav_links %}
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<ul class="nav navbar-nav">
 				<li>
-					<a href="#todo">Cortex</a>
+					<a class="navbar-brand" href="{% url 'root' %}">Cortex</a>
 				</li>
-				{% endblock %}
+				{% block nav_links %}{% endblock %}
 			</ul>
-			<div class="user-container">
+			<ul class="nav navbar-nav">
 				{% if user.is_authenticated %}
 				TODO
 				{% else %}
-				<a href="{% url 'login' %}">Login</a><!-- TODO -->
+				<li>
+					<a href="{% url 'login' %}">Login</a>
+				</li>
 				{% endif %}
-			</div>
+			</ul>
 		</nav>
 	</header>
 	<main>

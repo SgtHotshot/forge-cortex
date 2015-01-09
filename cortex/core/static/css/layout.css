@@ -13,24 +13,22 @@ body
 	height: 100vh;
 }
 
-header
-{
-	border-bottom: 1px solid black;
-}
-
-header nav
+header nav.navbar
 {
 	display: flex;
 	flex-direction: row;
+	margin: 0;
+	position: inherit;
 }
 
 header nav ul
 {
 	display: flex;
+}
+
+header nav ul:first-child
+{
 	flex: 1;
-	list-style: none;
-	margin: 0;
-	padding: 0;
 }
 
 header nav ul li a
@@ -48,11 +46,6 @@ header nav .user-container a
 main
 {
 	flex: 1;
-}
-
-footer
-{
-	border-top: 1px solid black;
 }
 
 footer ul
