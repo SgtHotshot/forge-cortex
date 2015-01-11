@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<title>{% block title %}Forge Cortex{% endblock %}</title>
+
+		{% block styles_nc %}
+		<link rel="stylesheet" type="text/css" media="all" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />
+		{% endblock %}
+
+		{% load compress %}
+
+		{% compress css %}
+			{% block styles %}
+			{% endblock %}
+		{% endcompress %}
+
+		<!--[if lt IE 9]>
+		<script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif] -->
+	</head>
+	<body>
+		{% block body %}{% endblock %}
+
+		{% block scripts_nc %}
+		<script type="text/javascript" media="all" src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" media="all" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+		{% endblock %}
+
+		{% compress js %}
+			{% block scripts %}
+			{% endblock %}
+		{% endcompress %}
+	</body>
+</html>
+

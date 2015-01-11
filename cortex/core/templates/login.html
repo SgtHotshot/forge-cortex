@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% load bootstrap3 %}
+{% load staticfiles %}
+
+{% block title %}Login{% endblock %}
+
+{% block styles %}
+	{{ block.super }}
+
+	<link rel="stylesheet" type="text/css" media="all" href="{% static 'css/login.css' %}" />
+{% endblock %}
+
+{% block body %}
+	<main>
+		<form method="POST" class="well">
+			{% csrf_token %}
+
+			<fieldset>
+				<legend>Login</legend>
+				{% bootstrap_form form %}
+				<div class="form-controls">
+					<input id="login" type="submit" class="btn btn-default" value="Login" />
+					<a id="register" href="#register">Register</a><!-- TOOD -->
+				</div>
+			</fieldset>
+		</form>
+	</main>
+{% endblock %}
+
+{% block scripts %}
+	{{ block.super }}
+	<script type="text/javascript" media="all">
+		$('main form fieldset .form-group input').each(
+			function () {
+				if (this.value === '') {
+					this.focus();
+					return false;
+				}
+			}
+		);
+	</script>
+{% endblock %}
+

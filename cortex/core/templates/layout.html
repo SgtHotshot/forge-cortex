@@ -1,58 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+{% extends 'base.html' %}
 
-		<title>{% block title %}Forge Cortex{% endblock %}</title>
+{% load staticfiles %}
 
-		{% load staticfiles %}
+{% block styles %}
+	{{ block.super }}
 
-		<link rel="stylesheet" type="text/css" href="{% static 'css/layout.css' %}" />
-		{% block styles %}
-		{% endblock %}
+	<link rel="stylesheet" type="text/css" media="all" href="{% static 'css/layout.css' %}" />
+{% endblock %}
 
-		<!--[if lt IE 9]>
-		<script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif] -->
-	</head>
-	<body>
-		<header>
-			<nav>
-				<ul>
-					{% block nav_links %}
-					<li>
-						<a href="#todo">Cortex</a>
-					</li>
-					{% endblock %}
-				</ul>
-				<div class="user-container">
-					{% if user.is_authenticated %}
-					TODO
-					{% else %}
-					<a href="#login">Login</a><!-- TODO -->
-					{% endif %}
+{% block body %}
+	<header>
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-links">
+						<span class="sr-only">Toggle Navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="{% url 'root' %}">Cortex</a>
 				</div>
-			</nav>
-		</header>
-		<main>
-			{% block page %}
-			{% endblock %}
-		</main>
-		<footer>
-			<ul>
-				<li>
-					<a href="https://github.com/sgthotshot/forge-cortex">Source</a>
-				</li>
-				<li>
-					<a href="#about">About</a><!-- TODO -->
-				</li>
-			</ul>
-		</footer>
-
-		{% block scripts %}{% endblock %}
-	</body>
-</html>
+				<div id="navbar-links" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						{% block nav_links %}
+						{% endblock %}
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						{% if user.is_authenticated %}
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+								<span class="glyphicon glyphicon-user"></span>
+								{{ user.username | title }}
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu">
+								<li>
+									<a href="{% url 'logout' %}" role="button">
+										Logout
+										<span class="glyphicon glyphicon-log-out"></span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						{% else %}
+						<li>
+							<a href="{% url 'login' %}">
+								Login
+								<span class="glyphicon glyphicon-log-in"></span>
+							</a>
+						</li>
+						{% endif %}
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<main>
+		{% block page %}
+		{% endblock %}
+	</main>
+	<footer>
+		<ul>
+			<li>
+				<a href="https://github.com/sgthotshot/forge-cortex">Source</a>
+			</li>
+			<li>
+				<a href="#about">About</a><!-- TODO -->
+			</li>
+		</ul>
+	</footer>
+{% endblock %}
 

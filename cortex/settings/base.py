@@ -16,6 +16,8 @@ BASE_DIR = os.path.dirname(
 	)
 )
 
+import django.core.urlresolvers
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
@@ -40,6 +42,8 @@ INSTALLED_APPS = [
 	'django.contrib.sessions',
 	'django.contrib.messages',
 	'django.contrib.staticfiles',
+	'bootstrap3',
+	'compressor',
 	'cortex.core',
 ]
 
@@ -86,4 +90,28 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_FINDERS = [
+	'django.contrib.staticfiles.finders.FileSystemFinder',
+	'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+	'compressor.finders.CompressorFinder',
+]
+
+# Authentication
+# https://docs.djangoproject.com/en/1.7/ref/settings/#auth
+
+AUTHENTICATION_BACKENDS = [
+	'django.contrib.auth.backends.ModelBackend',
+]
+
+LOGIN_URL = django.core.urlresolvers.reverse_lazy('login')
+LOGIN_REDIRECT_URL = django.core.urlresolvers.reverse_lazy('root')
+LOGOUT_URL = django.core.urlresolvers.reverse_lazy('logout')
+
+# Compressor
+# http://django-compressor.readthedocs.org/en/latest/settings
+
+COMPRESS_PRECOMPILERS = [
+	('text/less', 'lessc {infile} {outfile}'),
+]
 
