@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 	'django.contrib.messages',
 	'django.contrib.staticfiles',
 	'bootstrap3',
+	'compressor',
 	'cortex.core',
 ]
 
@@ -90,6 +91,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_FINDERS = [
+	'django.contrib.staticfiles.finders.FileSystemFinder',
+	'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+	'compressor.finders.CompressorFinder',
+]
+
 # Authentication
 # https://docs.djangoproject.com/en/1.7/ref/settings/#auth
 
@@ -100,4 +107,11 @@ AUTHENTICATION_BACKENDS = [
 LOGIN_URL = django.core.urlresolvers.reverse_lazy('login')
 LOGIN_REDIRECT_URL = django.core.urlresolvers.reverse_lazy('root')
 LOGOUT_URL = django.core.urlresolvers.reverse_lazy('logout')
+
+# Compressor
+# http://django-compressor.readthedocs.org/en/latest/settings
+
+COMPRESS_PRECOMPILERS = [
+	('text/less', 'lessc {infile} {outfile}'),
+]
 
