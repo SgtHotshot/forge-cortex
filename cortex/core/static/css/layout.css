@@ -15,32 +15,8 @@ body
 
 header nav.navbar
 {
-	display: flex;
-	flex-direction: row;
-	margin: 0;
+	margin: 1px;
 	position: inherit;
-}
-
-header nav ul
-{
-	display: flex;
-}
-
-header nav ul:first-child
-{
-	flex: 1;
-}
-
-header nav ul li a
-{
-	display: block;
-	padding: 4px;
-}
-
-header nav .user-container a
-{
-	display: block;
-	padding: 4px;
 }
 
 main
