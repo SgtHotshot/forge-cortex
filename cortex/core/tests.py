@@ -1,3 +1,9 @@
 from django.test import TestCase
 
-# Create your tests here.
+class RootViewTestCase(TestCase):
+	def test_guest_accessible(self):
+		self.assertEquals(
+			self.client.get('/').status_code,
+			200
+		)
+
