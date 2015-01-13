@@ -7,6 +7,8 @@ For more information on this file, see
 https://docs.djangoproject.com/en/1.7/howto/deployment/wsgi/
 """
 
+# pylint: disable=invalid-name
+
 import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "cortex.settings.dev")
 
