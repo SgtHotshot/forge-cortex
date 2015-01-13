@@ -85,3 +85,23 @@ class LoginViewTestCase(TransactionTestCase):
 			'/',
 		)
 
+class LogoutViewTestCase(TransactionTestCase):
+	fixtures = ['test_user.json']
+
+	def test_guest_accessible(self):
+		response = self.client.get('/logout')
+		self.assertRedirects(
+			response,
+			'/',
+		)
+
+	def test_logout_success_get(self):
+		self.client.login(username = 'test_user', password = 'test')
+
+		response = self.client.get('/logout')
+
+		self.assertRedirects(
+			response,
+			'/',
+		)
+
