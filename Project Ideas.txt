@@ -1,0 +1,11 @@
+1) Widget system for Mod pages (Kind of like a blog chat system, a gallery/image pane, or a Links box)
+2) Make the mod pages customizable by mod authors
+3) An optional agreement dialog box where the author can force the user to accept a license agreement before they download a mod
+	3.2) For the API interface the user would have to accept an agreement saying that any mod that they download through the API they automatically
+			accept the mod's license before they would get an API key.
+4) A search option
+	4.1) Make a category system where they could filter by mc version, or forge version
+	4.2) Also part of that category system they could filter by mythical, technology, world generation, additional blocks, or any categories that we specify
+5) System will allow stable, beta, and alpha builds.  Mod authors could put up a mod version for each version combo of minecraft/forge.  
+	More likely go with mc version.  This would probably be a download widget.  Include an API url too in the box.
+6)
