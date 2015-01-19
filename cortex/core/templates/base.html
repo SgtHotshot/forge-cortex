@@ -7,9 +7,16 @@
 
 		<title>{% block title %}Forge Cortex{% endblock %}</title>
 
+		{% load staticfiles %}
+
 		{% block styles_nc %}
+		{% if debug %}
+		<link rel="stylesheet" type="text/css" media="all" href="{% static 'lib/bootstrap/dist/css/bootstrap.css' %}" />
+		<link rel="stylesheet" type="text/css" media="all" href="{% static 'lib/bootstrap/dist/css/bootstrap-theme.css' %}" />
+		{% else %}
 		<link rel="stylesheet" type="text/css" media="all" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />
+		{% endif %}
 		{% endblock %}
 
 		{% load compress %}
@@ -28,8 +35,13 @@
 		{% block body %}{% endblock %}
 
 		{% block scripts_nc %}
+		{% if debug %}
+		<script type="text/javascript" media="all" src="{% static 'lib/jquery/dist/jquery.js' %}"></script>
+		<script type="text/javascript" media="all" src="{% static 'lib/bootstrap/dist/js/bootstrap.js' %}"></script>
+		{% else %}
 		<script type="text/javascript" media="all" src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 		<script type="text/javascript" media="all" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+		{% endif %}
 		{% endblock %}
 
 		{% compress js %}
