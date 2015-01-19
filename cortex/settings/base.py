@@ -113,5 +113,7 @@ LOGOUT_URL = django.core.urlresolvers.reverse_lazy('logout')
 
 COMPRESS_PRECOMPILERS = [
 	('text/less', 'lessc {infile} {outfile}'),
+	('text/x-sass', 'sass {infile} {outfile}'),
+	('text/x-scss', 'sass --scss {infile} {outfile}'),
 ]
 
