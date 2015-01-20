@@ -72,6 +72,11 @@ DATABASES = {
 	}
 }
 
+MONGO_HOST = {
+	'host' : '127.0.0.1',
+	'port' : '27017',
+}
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 

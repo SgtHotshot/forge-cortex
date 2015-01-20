@@ -7,3 +7,5 @@ TEMPLATE_DEBUG = True
 
 STATIC_ROOT = 'static'
 
+MONGO_USE       = True
+
