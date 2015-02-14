@@ -6,7 +6,8 @@ python:
     - "pypy"
 addons:
     postgres: "9.3"
-install: "pip install -r requirements.txt"
+install:
+    - pip install -r requirements.txt -r requirements.prod.txt
 before_script:
     - pylint cortex --errors-only
     - psql -c 'create database cortex_test;' -U postgres
