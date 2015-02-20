@@ -9,6 +9,18 @@ import django.views.generic
 
 class RootView(django.views.generic.TemplateView):
 	template_name = 'root.html'
+	
+class DashboardView(django.views.generic.TemplateView):
+	template_name = 'dashboard.html'
+	
+class ModDashboardView(django.views.generic.TemplateView):
+	template_name = 'modDashboard.html'
+	
+class ModAddEditView(django.views.generic.TemplateView):
+	template_name = 'modAddEdit.html'
+	
+class ModVersionAddEditView(django.views.generic.TemplateView):
+	template_name = 'modVersionAddEdit.html'
 
 class LoginView(django.views.generic.FormView):
 	form_class    = django.contrib.auth.forms.AuthenticationForm

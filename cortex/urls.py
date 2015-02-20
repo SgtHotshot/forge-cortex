@@ -25,5 +25,25 @@ urlpatterns = patterns('',
 		r'^admin/',
 		include(admin.site.urls),
 	),
+	url(
+		r'^dashboard',
+		cortex.core.views.DashboardView.as_view(),
+		name = 'dashboard',
+	),
+	url(
+		r'^modDashboard',
+		cortex.core.views.ModDashboardView.as_view(),
+		name = 'modDashboard',
+	),
+	url(
+		r'^modAddEdit',
+		cortex.core.views.ModAddEditView.as_view(),
+		name = 'modAddEdit',
+	),
+	url(
+		r'^modVersionAddEdit',
+		cortex.core.views.ModVersionAddEditView.as_view(),
+		name = 'modVersionAddEdit',
+	),
 )
 

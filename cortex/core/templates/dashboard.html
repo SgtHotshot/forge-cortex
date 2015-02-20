@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block nav_links %}
+<li><a href="/">Home</a></li>
+{% endblock %}
+
+{% block breadcrumbs %}
+<ul class="breadcrumb" style="margin-bottom: 5px;">
+    <li><a href="/">Home</a></li>
+    <li class="active">Dashboard</li>
+</ul>
+{% endblock %}
+
+{% block page %}
+<div class="row">
+    
+    <h1>Dashboard</h1>
+    
+    <table class="table table-striped table-hover ">
+            <thead>
+                <tr>
+                    <th>Mod Name</th>
+                    <th>Latest Version #</th>
+                    <th>Recommended Verion #</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="/modDashboard">New Mod</a></td>
+                    <td>3-1-3-RC</td>
+                    <td>3-0-0</td>
+                </tr>
+                <tr>
+                    <td><a href="/modDashboard">Mod Too</a></td>
+                    <td>1.2</td>
+                    <td>1.0</td>
+                </tr>
+            </tbody>
+        </table>
+    <a class="btn btn-secondary btn-right btn-fab btn-raised mdi-content-add btn-rotate-90" href="/modAddEdit"></a>
+</div>
+{% endblock %}

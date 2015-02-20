@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "authors": [
     "James Durand <james.durand@alumni.msoe.edu>",
-    "Ben Ebert <ebertb@alumni.msoe.edu>"
+    "Ben Ebert <ebertb@alumni.msoe.edu>",
+    "Andrew Ebert <developer@andrewtebert.com>"
   ],
   "description": "A Forge mod repository",
   "moduleType": [
@@ -21,6 +22,7 @@
   ],
   "dependencies": {
     "bootstrap": "~3.3.2",
+    "bootstrap-material-design": "~0.2.2",
     "font-awesome": "~4.2.0"
   }
 }

@@ -10,14 +10,16 @@
 		{% load staticfiles %}
 
 		{% block styles_nc %}
-		{% if debug %}
+		{% if DEBUG %}
 		<link rel="stylesheet" type="text/css" media="all" href="{% static 'lib/bootstrap/dist/css/bootstrap.css' %}" />
 		<link rel="stylesheet" type="text/css" media="all" href="{% static 'lib/bootstrap/dist/css/bootstrap-theme.css' %}" />
-		<link rel="stylesheet" type="text/css" media="all" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="{% static 'lib/font-awesome/css/font-awesome.css' %}" />
+		<link rel="stylesheet" type="text/css" media="all" href="{% static 'lib/bootstrap-material-design/dist/css/material-wfont.css' %}"/>
 		{% else %}
 		<link rel="stylesheet" type="text/css" media="all" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/css/material-wfont.min.css"/>
 		{% endif %}
 		{% endblock %}
 
@@ -37,18 +39,26 @@
 		{% block body %}{% endblock %}
 
 		{% block scripts_nc %}
-		{% if debug %}
+		{% if DEBUG %}
 		<script type="text/javascript" media="all" src="{% static 'lib/jquery/dist/jquery.js' %}"></script>
 		<script type="text/javascript" media="all" src="{% static 'lib/bootstrap/dist/js/bootstrap.js' %}"></script>
+		<script type="text/javascript" media="all" src="{% static 'lib/bootstrap-material-design/dist/js/material.js' %}"></script>
+		<script type="text/javascript" media="all" src="{% static 'lib/bootstrap-material-design/dist/js/ripples.js' %}"></script>
 		{% else %}
-		<script type="text/javascript" media="all" src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" media="all" src="//code.jquery.com/jquery-2.1.3.min.js"></script>
 		<script type="text/javascript" media="all" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+		<script type="text/javascript" media="all" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/js/material.js"></script>
+		<script type="text/javascript" media="all" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/js/ripples.min.js"></script>
 		{% endif %}
 		{% endblock %}
 
 		{% compress js %}
 			{% block scripts %}
 			{% endblock %}
+			<script type="text/javascript">
+				$.material.init()
+				
+			</script>
 		{% endcompress %}
 	</body>
 </html>

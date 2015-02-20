@@ -1,0 +1,74 @@
+@import "../lib/bootstrap-material-design/less/material-wfont.less";
+@import "../lib/bootstrap-material-design/less/_colors.less";
+@import "../lib/bootstrap/less/mixins/buttons.less";
+
+a, a:hover, a:focus {
+  color: @secondary;
+}
+// Override @primary color with one took from _colors.less
+@primary: @indigo;
+@secondary: @light-green;
+
+// Create secondary color for different bootstrap types
+@btn-secondary-color:              #fff;
+@btn-secondary-bg:                 @secondary;
+@btn-secondary-border:             darken(@btn-secondary-bg, 5%);
+
+// usage: .variations(~" .check", color, transparent);
+.generic-variations(@extra, @default, @func) {
+  &-secondary@{extra} {
+    @material-color-name: "secondary";
+    @material-color-full-name: @material-color-name;
+    @material-color: @secondary;
+    @text-color: @darkbg-text;
+    @func();
+  }
+  
+}
+
+.btn {
+  &.btn-right{
+    float: right;
+  
+  }
+  
+  &.btn-rotate-90{
+    -webkit-transition: -webkit-transform 0.4s ease-out;
+    -moz-transition: -moz-transform 0.4s ease-out;
+    transition: transform 0.4s ease-out;
+    
+    &:hover{
+      -webkit-transform: rotateZ(90deg);
+      -moz-transform: rotateZ(90deg);
+      transform: rotateZ(90deg);
+    }
+    
+  }
+  
+}
+
+.well {
+  background-color: #FFF;
+  &.primary{
+    color: @primary;
+  }
+  
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.togglebutton {
+  label {
+    input[type=checkbox]:first-child:checked + .toggle {
+      background-color: fade(@secondary, 50%);//rgba(0, 149, 135, 0.5);
+      // Handle on
+      &:after {
+        background-color: @secondary;
+      }
+    }
+  }
+}
+
+.breadcrumb {
+  background-color: none;
+}

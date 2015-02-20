@@ -7,20 +7,21 @@
 
 {% block styles %}
 	{{ block.super }}
-
-	<link rel="stylesheet" type="text/css" media="all" href="{% static 'css/login.css' %}" />
+	<link rel="stylesheet" type="text/less" media="all" href="{% static 'css/main.less' %}" />
+	<link rel="stylesheet" type="text/less" media="all" href="{% static 'css/login.less' %}" />
 {% endblock %}
 
 {% block body %}
 	<main>
-		<form method="POST" class="well">
+		<form method="POST" class="well well-primary">
 			{% csrf_token %}
 
 			<fieldset>
 				<legend>Login</legend>
 				{% bootstrap_form form %}
 				<div class="form-controls">
-					<input id="login" type="submit" class="btn btn-default" value="Login" />
+					<a id="goBack" href="/">Go Back</a>
+					<input id="login" type="submit" class="btn btn-secondary" value="Login" />
 					<a id="register" href="#register">Register</a><!-- TOOD -->
 				</div>
 			</fieldset>

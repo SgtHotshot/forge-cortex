@@ -1,0 +1,89 @@
+{% extends 'layout.html' %}
+
+{% block nav_links %}
+<li><a href="/dashboard">Dashboard</a></li>
+{% endblock %}
+
+{% block breadcrumbs %}
+<ul class="breadcrumb" style="margin-bottom: 5px;">
+    <li><a href="/">Home</a></li>
+    <li><a href="/dashboard">Dashboard</a></li>
+    <li class="active">&lt;Mod Name&gt;</li>
+</ul>
+{% endblock %}
+
+{% block page %}
+<div class="row">
+    
+    <h1>Mod Dashboard</h1>
+    
+    <div class="well bs-component">
+        
+        <h2>Mod Name</h2>
+        <small>Author Name</small>
+        
+        <div class="row">
+            <img src="http://placehold.it/120/8bc34a/ffffff.png&text=Mod+Logo!"/>
+            
+            <p> This is the description of the mod!</p>
+            
+        </div>
+                
+        <table class="table table-striped table-hover ">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>File Name</th>
+                    <th>Verion #</th>
+                    <th>Latest</th>
+                    <th>Recommended</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>mod_custom_3-1-3-rc.jar</td>
+                    <td>
+                        <form class="form-horizontal" method="UPDATE" action="#/mod/<name>/<version>">
+                            <div class="form-group">
+                                <input type="text" class="form-control floating-label" id="modVersion" placeholder="Mod Version"></input>
+                            </div>
+                        </form>
+                    </td>
+                    <td><i class="mdi-action-done"></i></td>
+                    <td><i class="mdi-action-done"></i></td>
+                    <td><a class="" href="#/mod/<name>/<version>/delete"><i class="mdi-action-delete"></i></a></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>mod_custom_3-3-4-rc.jar</td>
+                    <td>
+                        <form class="form-horizontal" method="UPDATE" action="#/mod/<name>/<version>">
+                            <div class="form-group">
+                                <input type="text" class="form-control floating-label" id="modVersion" placeholder="Mod Version"></input>
+                            </div>
+                        </form>
+                    </td>
+                    <td></td>
+                    <td>
+                        <form class="form-horizontal" method="UPDATE" action="#/mod/<name>/<version>">
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"></input>
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </td>
+                    <td><a class="" href="#/mod/<name>/<version>/delete"><i class="mdi-action-delete"></i></a></td>
+                </tr>
+            </tbody>
+        </table>
+    
+    
+        <a class="btn btn-secondary" href="/modAddEdit">Mod Edit</a>
+    </div>
+</div>
+{% endblock %}

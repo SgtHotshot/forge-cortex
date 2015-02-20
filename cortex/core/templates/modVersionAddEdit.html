@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block nav_links %}
+<li><a href="/dashboard">Dashboard</a></li>
+{% endblock %}
+
+{% block breadcrumbs %}
+<ul class="breadcrumb" style="margin-bottom: 5px;">
+    <li><a href="javascript:void(0)">Home</a></li>
+    <li><a href="javascript:void(0)">Dashboard</a></li>
+    <li><a href="javascript:void(0)">&lt;Mod Name&gt;</a></li>
+    <li class="active">Data</li>
+</ul>
+{% endblock %}
+
+{% block page %}
+<div class="row">
+    
+        <div class="well bs-component">
+            
+            <h1>Mod Version Add/Edit</h1>
+            
+            <hr>
+            
+            <form class="form-horizontal">
+                <fieldset>
+                    <legend>Legend</legend>
+                    <div class="form-group">
+                        <label for="versionNumber" class="col-lg-2 control-label">Mod Version</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control floating-label" id="versionNumber" placeholder="Mod Version">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="modFile" class="col-lg-2 control-label">Mod Jar</label>
+                        <div class="col-lg-10">
+                            <input type="text" readonly="" class="form-control floating-label" placeholder="Browse...">
+                            <input type="file" id="modFile" multiple="">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-secondary btn-right" >Save</button>
+                </fieldset>
+            </form>
+        </div>
+        
+</div>
+{% endblock %}

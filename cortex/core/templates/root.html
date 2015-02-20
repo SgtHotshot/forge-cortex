@@ -1,17 +1,146 @@
 {% extends 'layout.html' %}
 
+{% block nav_links %}
+<li><a href="/dashboard">Dashboard</a></li>
+{% endblock %}
+
+{% block breadcrumbs %}
+<ul class="breadcrumb" style="margin-bottom: 5px;">
+    <li class="active">Home</li>
+</ul>
+{% endblock %}
+
 {% block page %}
-	<h1>Forge Cortex</h1>
-	<p>
-		TODO: description
-	</p>
-	<h2>Recently Added Mods</h2>
-	<div class="recent-mods">
-		TODO
+	<div class="row">
+		<div class="jumbotron">
+			<h1>Forge-Cortex</h1>
+			<p>This site is for listing forge plugins and building a system so that users can find plugins and data about plugins quickly.  Eventually we want to add a system that puts together mod packs and have the ability to upload them to technicpack website.</p>
+			<p><a class="btn btn-secondary btn-lg">Learn more</a></p>
+		</div>
 	</div>
-	<h2>Top Mods</h2>
-	<div class="top-mods">
-		TODO
+	<div class="recent-mods row">
+		<div class="row">
+			<div class="col-lg-4">
+				<h2>Recently Added Mods</h2>
+				<div class="bs-component">
+					<div class="list-group">
+						<div class="list-group-item">
+							<div class="row-picture">
+            					<img src="http://placehold.it/56/8bc34a/ffffff.png&text=Mod+Logo!"/>
+					        </div>
+					        <div class="row-content">
+					            <div class="least-content">15m</div>
+					            <h4 class="list-group-item-heading">Tile with a label</h4>
+					            <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus.</p>
+					        </div>
+						</div>
+						<div class="list-group-separator"></div>
+						<div class="list-group-item">
+							<div class="row-picture">
+            					<img src="http://placehold.it/56/8bc34a/ffffff.png&text=Mod+Logo!"/>
+					        </div>
+					        <div class="row-content">
+					            <div class="least-content">15m</div>
+					            <h4 class="list-group-item-heading">Tile with a label</h4>
+					            <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus.</p>
+					        </div>
+						</div>
+						<div class="list-group-separator"></div>
+						<div class="list-group-item">
+							<div class="row-picture">
+            					<img src="http://placehold.it/56/8bc34a/ffffff.png&text=Mod+Logo!"/>
+					        </div>
+					        <div class="row-content">
+					            <div class="least-content">15m</div>
+					            <h4 class="list-group-item-heading">Tile with a label</h4>
+					            <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus.</p>
+					        </div>
+						</div>
+					</div>
+					<a href="/recent" class="btn btn-secondary btn-right">More</a>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<h2>Top Mods</h2>
+				<div class="bs-component">
+					<div class="list-group">
+						<div class="list-group-item">
+							<div class="row-picture">
+            					<img src="http://placehold.it/56/8bc34a/ffffff.png&text=Mod+Logo!"/>
+					        </div>
+					        <div class="row-content">
+					            <div class="least-content">15m</div>
+					            <h4 class="list-group-item-heading">Tile with a label</h4>
+					            <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus.</p>
+					        </div>
+						</div>
+						<div class="list-group-separator"></div>
+						<div class="list-group-item">
+							<div class="row-picture">
+            					<img src="http://placehold.it/56/8bc34a/ffffff.png&text=Mod+Logo!"/>
+					        </div>
+					        <div class="row-content">
+					            <div class="least-content">15m</div>
+					            <h4 class="list-group-item-heading">Tile with a label</h4>
+					            <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus.</p>
+					        </div>
+						</div>
+						<div class="list-group-separator"></div>
+						<div class="list-group-item">
+							<div class="row-picture">
+            					<img src="http://placehold.it/56/8bc34a/ffffff.png&text=Mod+Logo!"/>
+					        </div>
+					        <div class="row-content">
+					            <div class="least-content">15m</div>
+					            <h4 class="list-group-item-heading">Tile with a label</h4>
+					            <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus.</p>
+					        </div>
+						</div>
+					</div>
+					<a href="/top" class="btn btn-secondary btn-right">More</a>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<h2>Sponsored Mods</h2>
+				<div class="bs-component">
+					<div class="list-group">
+						<div class="list-group-item">
+							<div class="row-picture">
+            					<img src="http://placehold.it/56/8bc34a/ffffff.png&text=Mod+Logo!"/>
+					        </div>
+					        <div class="row-content">
+					            <div class="least-content">15m</div>
+					            <h4 class="list-group-item-heading">Tile with a label</h4>
+					            <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus.</p>
+					        </div>
+						</div>
+						<div class="list-group-separator"></div>
+						<div class="list-group-item">
+							<div class="row-picture">
+            					<img src="http://placehold.it/56/8bc34a/ffffff.png&text=Mod+Logo!"/>
+					        </div>
+					        <div class="row-content">
+					            <div class="least-content">15m</div>
+					            <h4 class="list-group-item-heading">Tile with a label</h4>
+					            <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus.</p>
+					        </div>
+						</div>
+						<div class="list-group-separator"></div>
+						<div class="list-group-item">
+							<div class="row-picture">
+            					<img src="http://placehold.it/56/8bc34a/ffffff.png&text=Mod+Logo!"/>
+					        </div>
+					        <div class="row-content">
+					            <div class="least-content">15m</div>
+					            <h4 class="list-group-item-heading">Tile with a label</h4>
+					            <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus.</p>
+					        </div>
+						</div>
+					</div>
+				</div>
+				<a href="/sponsored" class="btn btn-secondary btn-right">More</a>
+			</div>
+		</div>
 	</div>
 {% endblock %}
 

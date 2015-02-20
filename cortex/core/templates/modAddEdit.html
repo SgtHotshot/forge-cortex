@@ -1,0 +1,109 @@
+{% extends 'layout.html' %}
+
+{% block nav_links %}
+<li><a href="/dashboard">Dashboard</a></li>
+{% endblock %}
+
+{% block breadcrumbs %}
+<ul class="breadcrumb" style="margin-bottom: 5px;">
+    <li><a href="/">Home</a></li>
+    <li><a href="/dashboard">Dashboard</a></li>
+    <li><a href="/modDashboard">&lt;Mod Name&gt;</a></li>
+    <li class="active">Edit</li>
+</ul>
+{% endblock %}
+
+{% block page %}
+<div class="row">
+    
+        <div class="well bs-component">
+            
+            <h1>Mod Add/Edit</h1>
+            
+            <hr>
+            
+            <form class="form-horizontal">
+                <fieldset>
+                    <legend>Legend</legend>
+                    <div class="form-group">
+                        <label for="name" class="col-lg-2 control-label">Mod Name</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control floating-label" id="name" placeholder="Mod Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="icon" class="col-lg-2 control-label">Mod Icon</label>
+                        <div class="col-lg-10">
+                            <input type="text" readonly="" class="form-control floating-label" placeholder="Browse...">
+                            <input type="file" id="icon" multiple="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="author" class="col-lg-2 control-label">Mod Author</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control floating-label" id="author" placeholder="Mod Author">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="website" class="col-lg-2 control-label">Mod Website</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control floating-label" id="website" placeholder="Mod Website">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="description" class="col-lg-2 control-label">Description</label>
+                        <div class="col-lg-10">
+                            <textarea type="text" class="form-control" id="description" rows="3"></textarea>
+                            <span class="help-block">A description of the mod and its features.</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="private" class="col-lg-2 control-label">Private</label>
+                        <div class="col-lg-10">
+                            <div class="togglebutton">
+                                <label>
+                                    <input type="checkbox" checked=""></input>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="license" class="col-lg-2 control-label">License</label>
+                        <div class="col-lg-10">
+                            <textarea type="text" class="form-control" id="license" rows="3"></textarea>
+                            <span class="help-block">A description of the mod license.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="modType" class="col-lg-2 control-label">Modding System</label>
+                        <div class="col-lg-10">
+                            <div class="modType">
+                              <div class="radio radio-secondary">
+                                <label>
+                                  <input type="radio" name="modType" value="forge" checked="">
+                                  Forge
+                                </label>
+                              </div>
+                              <div class="radio radio-secondary">
+                                <label>
+                                  <input type="radio" name="modType" value="bukkit">
+                                  Bukkit
+                                </label>
+                              </div>
+                              <div class="radio radio-secondary">
+                                <label>
+                                  <input type="radio" name="modType" value="other">
+                                  Other
+                                </label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-secondary btn-right" >Save</button>
+                </fieldset>
+            </form>
+        </div>
+        
+</div>
+{% endblock %}
