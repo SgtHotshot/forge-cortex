@@ -4,11 +4,15 @@ python:
     - "3.3"
     - "3.4"
 # command to install dependencies
-install: "pip install -r requirements.txt"
+install: 
+    - pip install -r requirements.txt
+    - pip install coveralls
 # command to run tests
 before_script:
     - pylint cortex --errors-only
 script:
     - coverage run --source='cortex/core' manage.py test
     - coverage report --fail-under=75
+after_success:
+    coveralls
 
