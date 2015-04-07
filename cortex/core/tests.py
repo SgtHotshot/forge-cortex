@@ -1,6 +1,6 @@
 from django.test import TestCase, TransactionTestCase
 
-# pylint: disable=too-few-public-methods
+# pylint: skip-file
 
 class RootViewTestCase(TestCase):
 	def test_guest_accessible(self):
@@ -104,4 +104,3 @@ class LogoutViewTestCase(TransactionTestCase):
 			response,
 			'/',
 		)
-
