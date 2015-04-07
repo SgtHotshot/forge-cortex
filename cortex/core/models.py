@@ -31,7 +31,7 @@ class Person(models.Model):
 
 class Mod(models.Model):
 	def generate_imagefilename(self, filename):
-		return os.path.join(MODS, self.Mod.name, IMAGES, filename)
+		return os.path.join(MODS, self.name, IMAGES, filename)
 
 	name = models.CharField(max_length=40)
 	modType = models.CharField(max_length=1, choices=MOD_TYPE_CHOICES, blank=True)
@@ -47,7 +47,7 @@ class Mod(models.Model):
 
 class ModVersion(models.Model):
 	def generate_filename(self, filename):
-		return os.path.join(MODS, self.Mod.name, FILES, filename)
+		return os.path.join(MODS, self.mod.name, FILES, filename)
 
 	tags = models.ManyToManyField(Tag)
 	version = models.CharField(max_length=40, blank=True)
