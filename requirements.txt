@@ -3,4 +3,5 @@ django>=1.7
 django-bootstrap3
 django-compressor
 pylint
+pillow
 
