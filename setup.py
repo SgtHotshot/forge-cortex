@@ -17,8 +17,8 @@ os.chdir(
 setup(
 	name                 = 'forge-cortex',
 	version              = '1.0.0.0',
-	author               = 'Ben Ebert, James Durand',
-	author_email         = 'ebertb@alumni.msoe.edu, james.durand@alumni.msoe.edu',
+	author               = 'Ben Ebert, James Durand, Andrew Ebert',
+	author_email         = 'ebertb@alumni.msoe.edu, james.durand@alumni.msoe.edu, developer@andrewtebert.com',
 	license              = 'MIT',
 	description          = 'Minecraft Forge mod directory',
 	long_description     = README,
